@@ -34,7 +34,8 @@ def main():
         clock = pygame.time.Clock()
         running = True
         screen.fill("light green")
-        grid(screen, "black")
+        colors = "dark green"
+        grid(screen, colors)
         screen.blit(mole_image, mole_image.get_rect(topleft=(0, 0)))
 
         while running:
@@ -46,10 +47,10 @@ def main():
                     if mole_rect[0] <= mx <= (mole_rect[0] + 32) and mole_rect[1] <= my <= (mole_rect[1] + 32):
                         mole_rect = change(screen, mole_image)
 
-
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_SPACE:
-                        print(change(screen, mole_image))
+                #
+                # if event.type == pygame.KEYDOWN:
+                #     if event.key == pygame.K_SPACE:
+                #         print(change(screen, mole_image))
 
             pygame.display.flip()
             clock.tick(60)
